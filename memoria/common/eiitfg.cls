@@ -77,10 +77,10 @@
 \renewcommand{\appendixtocname}{Anexo}
 \renewcommand{\appendixpagename}{Anexo}
 
-\graphicspath{{fig/}{doc/fig/}{memoria/doc/fig/}}
+\graphicspath{{fig/}{tex/fig/}{memoria/tex/fig/}}
 % Añado doc/ a la ruta de input, para que dentro de doc no sea
 % necesario poner \input{doc/parte.tex}
 \makeatletter
 \providecommand*{\input@path}{}
-\g@addto@macro\input@path{{doc/}{memoria/doc/}}
+\g@addto@macro\input@path{{tex/}{memoria/tex/}}
 \makeatother
