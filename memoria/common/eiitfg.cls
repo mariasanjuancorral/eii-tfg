@@ -1,3 +1,4 @@
+% -*- coding: utf-8 -*-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cedvamazon}[2015/07/03 modified book class for CEDV]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
@@ -9,7 +10,7 @@
 
 \setlength{\unitlength}{1mm}
 
-% http://tug.org/mailman/htdig/pstricks/2011/009122.html
+% https://tug.org/pipermail/pstricks/2011/009122.html
 \usepackage{etex}
 
 % Codificación UTF8
@@ -76,10 +77,10 @@
 \renewcommand{\appendixtocname}{Anexo}
 \renewcommand{\appendixpagename}{Anexo}
 
-\graphicspath{{img/}{doc/img/}{fig/}{doc/fig/}{figuras/}{doc/figuras/}}
+\graphicspath{{fig/}{doc/fig/}{memoria/doc/fig/}}
 % Añado doc/ a la ruta de input, para que dentro de doc no sea
 % necesario poner \input{doc/parte.tex}
 \makeatletter
 \providecommand*{\input@path}{}
-\g@addto@macro\input@path{{doc/}}
+\g@addto@macro\input@path{{doc/}{memoria/doc/}}
 \makeatother
