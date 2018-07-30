@@ -12,3 +12,4 @@ Los alumnos a los que dirijo el TFG tendrán que usarla a partir del curso 2018-
 1. Hazte una cuenta en Overleaf o ShareLaTeX.
 1. Crea un nuevo proyecto a partir del ZIP descargado de GitHub.
 1. Cada vez que tengas cambios significativos descarga los fuentes de Overleaf y súbelos a GitHub.
+

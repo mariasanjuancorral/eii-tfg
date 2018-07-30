@@ -39,7 +39,7 @@
 \usepackage{appendix}
 \usepackage{listings}
 \usepackage{longtable}
-\usepackage{minted}
+\usepackage[outputdir=..]{minted}
 \usepackage[export]{adjustbox}
 \usepackage{emptypage}
 \usepackage{setspace}
@@ -63,12 +63,19 @@
 
 \setlength{\parskip}{4pt}
 
-\usepackage{common/metadata}
-\usepackage{common/code}
-\usepackage{common/portada}
-\usepackage{common/entornos}
-\usepackage{common/indices}
-\usepackage{common/admonition}
+\makeatletter
+\providecommand*{\input@path}{}
+\g@addto@macro\input@path{{memoria/}{memoria/tex/}{memoria/sty/}{tex/}{sty/}}
+\makeatother
+\graphicspath{{fig/}}
+
+\usepackage{metadata}
+\usepackage{licencia}
+\usepackage{code}
+\usepackage{portada}
+\usepackage{entornos}
+\usepackage{indices}
+\usepackage{admonition}
 
 \pagestyle{headings}
 \renewcommand{\bibname}{Referencias}
@@ -76,11 +83,3 @@
 \renewcommand{\appendixname}{Anexo}
 \renewcommand{\appendixtocname}{Anexo}
 \renewcommand{\appendixpagename}{Anexo}
-
-\graphicspath{{fig/}{tex/fig/}{memoria/tex/fig/}}
-% Añado doc/ a la ruta de input, para que dentro de doc no sea
-% necesario poner \input{doc/parte.tex}
-\makeatletter
-\providecommand*{\input@path}{}
-\g@addto@macro\input@path{{tex/}{memoria/tex/}}
-\makeatother

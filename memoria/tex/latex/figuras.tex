@@ -14,13 +14,13 @@ La fig.~\ref{fig:figurita-ejemplo} es un ejemplo de \emph{Encapsulated PostScrip
 
 La forma de incluir la figura es simple:
 
-\begin{minted}{latex}
+\begin{lstlisting}[language={[LaTeX]TeX},frame=none,numbers=none]
 \begin{figure}
 \centering\includegraphics[width=6cm]{ejemplo.eps}
 \caption{Figurita ejemplo}
 \label{fig:figurita-ejemplo}
 \end{figure}
-\end{minted}
+\end{lstlisting}
 
 El entorno \texttt{figure} crea un cuadro flotante, con todo el contenido de la figura, que \LaTeX{} coloca en el sitio menos malo.  La \texttt{caption} es el pie de la figura y la \texttt{label} es la etiqueta que nos permitirá referirnos a ella en el texto (con la orden \texttt{ref}).
 

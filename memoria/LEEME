@@ -9,7 +9,7 @@ infierno.
 El documento maestro es TFG.tex, en la misma carpeta que este archivo. Ese 
 documento tiene solo la estructura, todo el contenido está en otras carpetas:
 
-doc/    Esta carpeta contiene todos los subdocumentos del TFG. Si tienes mucho
+tex/    Esta carpeta contiene todos los subdocumentos del TFG. Si tienes mucho
         material puedes hacer subcarpetas para organizarlo mejor, pero procura
         mantener una estructura lo más plana posible, facilita las reorganiza-
         ciones del documento.
@@ -25,7 +25,7 @@ bib/    Esta carpeta contiene la bibliografía en formato BibTeX.  Hay muchas ut
         lidades que pueden usarse para generar los archivos bib, pero no es 
         mucho problema escribirlos a mano.  Imita los ejemplos.
 
-common/ Esta carpeta contiene los estilos LaTeX para tu TFG. No es necesario que
+sty/    Esta carpeta contiene los estilos LaTeX para tu TFG. No es necesario que
         edites nada de esta carpeta. Si todavía no te sientes cómodo con LaTeX
         no lo leas.
 
