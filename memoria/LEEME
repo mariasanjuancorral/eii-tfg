@@ -15,7 +15,7 @@ tex/    Esta carpeta contiene todos los subdocumentos del TFG. Si tienes mucho
         ciones del documento.
 
 fig/    Esta carpeta contiene las figuras del TFG. Hay quien prefiere tener una
-        subcarpeta dentro de doc/. En mi experiencia las figuras son útiles en
+        subcarpeta dentro de tex/. En mi experiencia las figuras son útiles en
         otros contextos diferentes del documento de la memoria.  Por ejemplo,
         la presentación.  En ese caso tener muchas subcarpetas te supondrá mucho
         más trabajo de búsqueda.  Si quieres ordenarlas por capítulos utiliza
