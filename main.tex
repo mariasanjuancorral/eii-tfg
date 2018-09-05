@@ -1,4 +1,4 @@
-%\title{Dodecahedron desk calendar}
+%\title{UCLM EII TFG}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Welcome to Overleaf --- just edit your LaTeX on the left,
@@ -18,6 +18,7 @@
 \usetikzlibrary{calendar,folding}
 
 %%%<
+\usepackage[spanish]{babel}
 \usepackage{verbatim}
 \usepackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
@@ -40,8 +41,8 @@ the manual.
             at={(-8ex,4ex)},
             week list,
             month label above centered, 
-            month text=\bfseries\textcolor{red}{\%mt} \%y0,
-            if={(Sunday) [black!50]}
+            month text=\bfseries\textcolor{blue}{\%mt} \%y0,
+            if={(Sunday) [red!50]}
         }]
     \tikzfoldingdodecahedron[
         folding line length=2.5cm,
