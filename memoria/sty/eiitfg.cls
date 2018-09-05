@@ -1,6 +1,6 @@
 % -*- coding: utf-8 -*-
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cedvamazon}[2015/07/03 modified book class for CEDV]
+\ProvidesClass{eiitfg}[2015/07/03 modified book class for UCLM EII TFG]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \PassOptionsToClass{11pt,twoside,titlepage,openright,a4paper}{book}
 \ProcessOptions\relax
@@ -39,7 +39,7 @@
 \usepackage{appendix}
 \usepackage{listings}
 \usepackage{longtable}
-\usepackage[outputdir=..]{minted}
+\usepackage{minted}
 \usepackage[export]{adjustbox}
 \usepackage{emptypage}
 \usepackage{setspace}
@@ -67,7 +67,7 @@
 \providecommand*{\input@path}{}
 \g@addto@macro\input@path{{memoria/}{memoria/tex/}{memoria/sty/}{tex/}{sty/}}
 \makeatother
-\graphicspath{{fig/}}
+\graphicspath{{fig/}{memoria/fig/}{memoria/}}
 
 \usepackage{metadata}
 \usepackage{licencia}
