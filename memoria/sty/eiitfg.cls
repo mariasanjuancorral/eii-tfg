@@ -1,6 +1,6 @@
 % -*- coding: utf-8 -*-
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{eiitfg}[2015/07/03 modified book class for UCLM EII TFG]
+\ProvidesClass{memoria/sty/eiitfg}[2015/07/03 modified book class for UCLM EII TFG]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \PassOptionsToClass{11pt,twoside,titlepage,openright,a4paper}{book}
 \ProcessOptions\relax
@@ -22,28 +22,7 @@
 \usepackage{hyperref}
 \usepackage{bookmark}
 \usepackage{cleveref}
-
-\newcommand\myshade{85}
-\colorlet{mylinkcolor}{violet}
-\colorlet{mycitecolor}{YellowOrange}
-\colorlet{myurlcolor}{Aquamarine}
-
-\hypersetup{
-  linkcolor  = mylinkcolor!\myshade!black,
-  citecolor  = mycitecolor!\myshade!black,
-  urlcolor   = myurlcolor!\myshade!black,
-  colorlinks = true,
-}
-
-% Ubicaciones absolutas
 \usepackage{float}
-
-\usepackage{caption}
-\captionsetup{
-  margin=0pt,
-  font={footnotesize,stretch=.85},
-  labelfont=bf}
-
 \usepackage{datetime2}
 \usepackage{graphicx}
 \usepackage{multirow}
@@ -57,10 +36,11 @@
 \usepackage{emptypage}
 \usepackage{setspace}
 \usepackage{times}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{enumerate}
 \usepackage{textcomp}
 \usepackage[nottoc,numbib]{tocbibind}
+\usepackage{caption}
 
 \usepackage[
   paperwidth=210mm,
@@ -69,10 +49,10 @@
   top=25mm, bottom=25mm,
   marginparwidth=1cm, marginparsep=1cm]{geometry}
 
-\definecolor{gris30}{gray}{0.30}
-\definecolor{gris85}{gray}{0.85}
-\definecolor{gris20}{gray}{0.20}
-\definecolor{gris50}{gray}{0.50}
+\captionsetup{
+  margin=0pt,
+  font={footnotesize,stretch=.85},
+  labelfont=bf}
 
 \setlength{\parskip}{4pt}
 
@@ -82,6 +62,29 @@
 \makeatother
 \graphicspath{{fig/}{memoria/fig/}{memoria/}}
 
+\pagestyle{headings}
+\renewcommand{\bibname}{Referencias}
+\bibliographystyle{abbrvnat}
+\renewcommand{\appendixname}{Anexo}
+\renewcommand{\appendixtocname}{Anexo}
+\renewcommand{\appendixpagename}{Anexo}
+
+\definecolor{gris30}{gray}{0.30}
+\definecolor{gris85}{gray}{0.85}
+\definecolor{gris20}{gray}{0.20}
+\definecolor{gris50}{gray}{0.50}
+\newcommand\myshade{85}
+\colorlet{mylinkcolor}{violet}
+\colorlet{mycitecolor}{YellowOrange}
+\colorlet{myurlcolor}{Aquamarine}
+
+\hypersetup{
+  linkcolor  = mylinkcolor!\myshade!black,
+  citecolor  = mycitecolor!\myshade!black,
+  urlcolor   = myurlcolor!\myshade!black,
+  colorlinks = true,
+}
+
 \usepackage{metadata}
 \usepackage{licencia}
 \usepackage{code}
@@ -90,9 +93,4 @@
 \usepackage{indices}
 \usepackage{admonition}
 
-\pagestyle{headings}
-\renewcommand{\bibname}{Referencias}
-\bibliographystyle{abbrvnat}
-\renewcommand{\appendixname}{Anexo}
-\renewcommand{\appendixtocname}{Anexo}
-\renewcommand{\appendixpagename}{Anexo}
+
