@@ -3,12 +3,12 @@
 
 Esto es un ejemplo de anexo. En este anexo se muestran algunos ejemplos de como plasmar código fuente.
 
-En mi opinión, la forma más flexible y cómoda es usar el paquete \texttt{lstlistings}.  Permite incluir archivos o parte de archivos directamente del proyecto con la orden \texttt{lstinputlisting}.
+Una opción es usar el paquete \texttt{lstlistings}.  Permite incluir archivos o parte de archivos directamente del proyecto con la orden \texttt{lstinputlisting}.
 
 \lstinputlisting[language=Matlab,
     caption={Ejercicio 20 como texto incorporado},
     label=src:ej20-input
-]{memoria/tex/latex/ejercicio20.m}
+]{tex/latex/ejercicio20.m}
 
 O bien se puede copiar el texto del programa o fragmento en un entorno \texttt{lstlisting} con las mismas opciones que la orden \texttt{lstinputlisting}.
 
@@ -77,7 +77,13 @@ end
 T(f,c)='R';
 \end{verbatim}
 
-\noindent Otra forma alternativa a \texttt{lstlisting} es el paquete \texttt{minted}, que colorea el programa según el lenguaje empleado.  Puede resultar más agradable desde el punto de vista estético pero recuerda que las fotocopias en color son entre 5 y 10 veces más caras que las fotocopias en blanco y negro.
+\noindent Otra forma alternativa a \texttt{lstlisting} es el paquete \texttt{minted}, que colorea el programa según el lenguaje empleado.
+
+\setminted[matlab]{
+    xleftmargin=20pt,
+    linenos,
+    breaklines,
+    bgcolor=gris85}
 
 \begin{minted}{matlab}
 function [T]=Ejercicio20(f,c)
@@ -96,3 +102,7 @@ end
 
 T(f,c)='R';
 \end{minted}
+
+\noindent O bien, usando la orden \texttt{inputminted} para incluir directamente un archivo Matlab.
+
+\inputminted{matlab}{tex/latex/ejercicio20.m}

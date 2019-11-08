@@ -1,58 +1,74 @@
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{makecell}
+
 \newcommand{\portada}{%
+    \newgeometry{%
+        left=20mm,right=15mm,
+        top=15mm, bottom=15mm}
     \begin{titlepage}
-        \centering
-        {\LARGE
-            \includegraphics[width=6cm]{sty/uclm_to.jpg}
-            
-            \par{\bf UNIVERSIDAD DE CASTILLA-LA MANCHA}
-            
-            \par\vspace{2mm} ESCUELA DE INGENIERÍA INDUSTRIAL \\ DE TOLEDO
-            
-            \par\vspace{10mm}TRABAJO FIN DE GRADO Nº \@tfgid
-            
-            \par\vspace{15mm}\MakeUppercase{\@title}
-        }
-        \par\vspace{15mm}\begin{tabular}{llr}
-        \includegraphics[width=4cm,valign=T]{sty/logoii.jpg} % 
-        & \rule{0.5cm}{0pt} %
-        & \cajaautor \\
-        \end{tabular}
+        \noindent\begin{tabularx}{17cm}{m{1.5cm}R{15.5cm}}
+            \multicolumn{2}{@{}l@{}}{%
+                \makecell[{{p{17cm}}}]{%
+                \includegraphics[height=3cm,valign=B]{sty/UCLM_SIMBOLO_LOGO}%
+                %\hfill\includegraphics[width=4cm,valign=B]{sty/EII_sym_noletras.pdf}}} \\
+                \hfill\includegraphics[height=3cm,valign=B]{sty/logo\@grado.png}}} \\
+            \cellcolor[gray]{0.8}
+            \resizebox{1.4cm}{22cm}{\rotatebox{90}{%
+                \rule{0cm}{.92cm}\Huge{\textsf{%
+                    ~~~Escuela de Ingeniería Industrial y Aeroespacial~~~
+            }}}}
+            &
+            \makecell[{{p{14cm}}}]{%
+                \begin{minipage}{14cm}
+                    \sffamily\begin{flushright}
+                        \LARGE\vspace{1cm}\resizebox{4.5cm}{.35cm}{\Large TRABAJO FIN DE GRADO}\\
+                        \resizebox{4.5cm}{!}{Nº~\expandafter\@gobbletwo\number\numexpr\the\year\relax-\tfgcode{\@grado}-\@expediente}\\ 
+                        \rule{0mm}{5cm}\\
+                        \setlength{\unitlength}{1cm}
+                        \begin{picture}(14,0)
+                            \put(0,0){\parbox{14cm}{%
+                                \raggedleft\textbf{\@title}\\
+                                \rule{0cm}{1cm}\\
+                                \@author
+                            }}
+                        \end{picture} \\
+                        \rule{0mm}{14cm}\\
+                        \DTMsavenow{thisone}
+                        \scalebox{.8}[1.0]{\Large\MakeUppercase{%
+                            \DTMspanishmonthname{\DTMfetchmonth{thisone}} de \the\year}}
+                    \end{flushright}
+                \end{minipage}
+            }\\
+        \end{tabularx}
+        \thispagestyle{empty}
     \end{titlepage}
-    \clearpage
+    \clearpage\restoregeometry
     \thispagestyle{empty}
     \copyrightpage
     \cleardoublepage
 }
 
-\newcommand{\cajaautor}{%
-    \DTMsavenow{thisone}
-    {\Large\begin{tabular}[t]{p{7cm}}
-     Autor:\\
-     \@author \\
-     \vspace{.5cm} Director: \\
-     \@advisor \\
-     \vspace{1cm} \MakeUppercase{\DTMspanishmonthname{\DTMfetchmonth{thisone}} de \the\year}
-    \end{tabular}}
-}
-
-
-
+\newcommand{\multi@tutor}{}
 \newcommand{\copyrightpage}{%
-  \begin{singlespace}
-    \null \vfill \noindent
-    \textbf{\@author} \par
-    \smallskip \noindent
-    \ifdefempty{\@address}   {}{\@address \\}
-    \ifdefempty{\@zipcode}{}{\@zipcode~}\@city\ -- \@country
-
-    \vspace{-.9cm}
+    \IfSubStringInString{\\}{\@advisor}{\renewcommand{\multi@tutor}{es}}{}
+    \null \vfill
+    \noindent
     \begin{tabbing}
-      \hspace*{1.7cm} \= \\
-      \ifdefempty{\@email}   {}{\emph{E-mail:}   \> \@email \\}
-      \ifdefempty{\@phone}   {}{\emph{Teléfono:} \> \@phone \\}
-      \ifdefempty{\@homepage}{}{\emph{Web site:} \> \url{\@homepage} \\}
+        \hspace*{1.7cm} \= \\
+        \emph{Título:}  \> \parbox[t]{.7\textwidth}{\@title} \\
+        \emph{Autor:}   \> \@author \\
+        \emph{Grado:}   \> \gname{\@grado} \\
+        \emph{Tutor\multi@tutor{}:}   \> \parbox[t]{.7\textwidth}{\@advisor\\} \\
+        \ifdefempty{\@email}   {}{\emph{E-mail:}   \> \@email \\}
+        \ifdefempty{\@phone}   {}{\emph{Teléfono:} \> \@phone \\}
+        \ifdefempty{\@homepage}{}{\emph{Web site:} \> \url{\@homepage} \\}
+        \ifdefempty{\@address} {}{\emph{Dirección:} \> \parbox[t]{.7\textwidth}{%
+            \@address \\ 
+            \ifdefempty{\@zipcode} {}{\@zipcode~}\@city\ -- \@country  
+        } \\}
     \end{tabbing}
-    \vspace{-1cm}
+    \vspace{-.7cm}
+  \begin{singlespace}
     \noindent
     \copyright\ \number\the\year\ \ \@author \par
     \smallskip \noindent
