@@ -1,45 +1,36 @@
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\usepackage{makecell}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \newcommand{\portada}{%
     \newgeometry{%
         left=20mm,right=15mm,
         top=15mm, bottom=15mm}
     \begin{titlepage}
-        \noindent\begin{tabularx}{17cm}{m{1.5cm}R{15.5cm}}
-            \multicolumn{2}{@{}l@{}}{%
-                \makecell[{{p{17cm}}}]{%
-                \includegraphics[height=3cm,valign=B]{sty/UCLM_SIMBOLO_LOGO}%
-                %\hfill\includegraphics[width=4cm,valign=B]{sty/EII_sym_noletras.pdf}}} \\
-                \hfill\includegraphics[height=3cm,valign=B]{sty/logo\@grado.png}}} \\
-            \cellcolor[gray]{0.8}
-            \resizebox{1.4cm}{22cm}{\rotatebox{90}{%
-                \rule{0cm}{.92cm}\Huge{\textsf{%
-                    ~~~Escuela de Ingeniería Industrial y Aeroespacial~~~
-            }}}}
-            &
-            \makecell[{{p{14cm}}}]{%
-                \begin{minipage}{14cm}
-                    \sffamily\begin{flushright}
-                        \LARGE\vspace{1cm}\resizebox{4.5cm}{.35cm}{\Large TRABAJO FIN DE GRADO}\\
-                        \resizebox{4.5cm}{!}{Nº~\expandafter\@gobbletwo\number\numexpr\the\year\relax-\tfgcode{\@grado}-\@expediente}\\ 
-                        \rule{0mm}{5cm}\\
-                        \setlength{\unitlength}{1cm}
-                        \begin{picture}(14,0)
-                            \put(0,0){\parbox{14cm}{%
-                                \raggedleft\textbf{\@title}\\
-                                \rule{0cm}{1cm}\\
-                                \@author
-                            }}
-                        \end{picture} \\
-                        \rule{0mm}{14cm}\\
-                        \DTMsavenow{thisone}
-                        \scalebox{.8}[1.0]{\Large\MakeUppercase{%
-                            \DTMspanishmonthname{\DTMfetchmonth{thisone}} de \the\year}}
-                    \end{flushright}
-                \end{minipage}
-            }\\
-        \end{tabularx}
+        \sffamily
+        \noindent\includegraphics[height=3cm,valign=B]{sty/UCLM_SIMBOLO_LOGO}%
+        \hfill\includegraphics[height=3cm,valign=B]{sty/logo\@grado.png} \\
+        \begin{minipage}[b]{1.5cm}
+            \colorbox{lightgray}{\rotatebox[origin=l]{90}{%
+                \rule{0cm}{1.6cm}\rule{3.5cm}{0cm}
+                \raisebox{.45cm}{\Huge{\textsf{\textcolor{white}{%
+                    Escuela de Ingeniería Industrial y Aeroespacial}}
+                \rule{.5cm}{0cm}}}}}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{14cm}
+            \hfill\parbox{4.5cm}{%
+            \resizebox{4.5cm}{.35cm}{\Large TRABAJO FIN DE GRADO}\\[1.1ex]
+            \resizebox{4.5cm}{!}{Nº~\expandafter\@gobbletwo\number\numexpr\the\year\relax-\tfgcode{\@grado}-\@expediente}}\\[6cm]
+            \setlength{\unitlength}{1cm}
+            \begin{picture}(13,0)
+                \put(0,0){\parbox{14cm}{%
+                    \raggedleft\LARGE\textbf{\@title}\\
+                    \rule{0cm}{1cm}\\
+                    \@author
+                }}
+            \end{picture} \\[13cm]
+            \DTMsavenow{thisone}
+            \mbox{}\hfill\scalebox{.8}[1.0]{\Large\MakeUppercase{%
+                \DTMspanishmonthname{\DTMfetchmonth{thisone}} de \the\year}}\\
+        \end{minipage}
         \thispagestyle{empty}
     \end{titlepage}
     \clearpage\restoregeometry

@@ -17,16 +17,18 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish, es-tabla]{babel}
-\usepackage{enumerate}
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{bookmark}
-\usepackage{cleveref}
 \usepackage[
     backend=biber, 
-    style=ieee,
+    %style=ieee,
     %style=alphabetic,
+    style=ieee-alphabetic,
     sorting=nty]{biblatex}
+\usepackage{makecell}
+\usepackage{times}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{bookmark}
 \usepackage{float}
 \usepackage{datetime2}
 \usepackage{graphicx}
@@ -41,8 +43,6 @@
 \usepackage[export]{adjustbox}
 \usepackage{emptypage}
 \usepackage{setspace}
-\usepackage{times}
-\usepackage[dvipsnames]{xcolor}
 \usepackage{textcomp}
 \usepackage{caption}
 \usepackage{footmisc}
@@ -51,6 +51,11 @@
 \usepackage{wrapfig}
 \usepackage{xstring}
 \usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{ifthen}
+\usepackage{currfile}
 
 \usepackage[
   paperwidth=210mm,
